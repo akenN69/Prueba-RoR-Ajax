@@ -9,6 +9,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<%= destroy_user_session_path %>" data-method="delete"> Salir </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= admin_user_session_path %>"> Dashboard Admin </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= companies_path %>"> Company </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= complaints_path %>"> Complaints </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><%= current_user.email %></a>
+                </li>
             <% else %>
                 <li class="nav-item active">
                     <a class="nav-link" href="<%= new_user_session_path %>"> Ingresar <span class="sr-only">(current)</span></a>
@@ -18,6 +30,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<%= admin_user_session_path %>"> Dashboard Admin </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= companies_path %>"> Company </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= complaints_path %>"> Complaints </a>
                 </li>
             <% end %>
         </ul>

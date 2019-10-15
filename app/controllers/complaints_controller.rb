@@ -25,12 +25,13 @@ class ComplaintsController < ApplicationController
   # POST /complaints.json
   def create
     @complaint = Complaint.new(complaint_params)
-
+    @complaint.user = current_user
+    @complaint.company_id = params[:company_id]
     respond_to do |format|
       if @complaint.save
         format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
         format.json { render :show, status: :created, location: @complaint }
-        format.js
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @complaint.errors, status: :unprocessable_entity }

@@ -9,6 +9,7 @@
 Complaint.destroy_all
 User.destroy_all
 Company.destroy_all
+AdminUser.destroy_all
 
 20.times do
     Company.create(name: Faker::Company.name)

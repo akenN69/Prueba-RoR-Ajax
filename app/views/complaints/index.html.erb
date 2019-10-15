@@ -15,8 +15,8 @@
   <tbody>
     <% @complaints.each do |complaint| %>
       <tr>
-        <td><%= complaint.user %></td>
-        <td><%= complaint.company %></td>
+        <td><%= complaint.user.email %></td>
+        <td><%= complaint.company.name %></td>
         <td><%= complaint.content %></td>
         <td><%= link_to 'Show', complaint %></td>
         <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
